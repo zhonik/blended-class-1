@@ -5,6 +5,9 @@ import ForbesList from './components/ForbesList/ForbesList';
 import Heading from './components/Heading/Heading';
 import Section from './components/Section/Section';
 import Statistics from './components/Statistics/Statistics';
+import stats from './data/stats.json';
+import forbes from './data/forbes.json';
+import transactions from './data/transactions.json';
 
 export const App = () => {
   return (
@@ -14,13 +17,14 @@ export const App = () => {
         <BlogCard />
 
         <Heading title="Task 2 Statistics" top bottom />
-        <Statistics title="Main Statistics" />
+        <Statistics title="Main Statistics" stats={stats} />
+        <Statistics stats={stats} />
 
         <Heading title="Task 3 Forbes list" top bottom />
-        <ForbesList />
+        <ForbesList list={forbes} />
 
         <Heading title="Task 4 Crypto history" top bottom />
-        <CryptoHistory />
+        <CryptoHistory items={transactions} />
       </Container>
     </Section>
   );
